@@ -1,16 +1,3 @@
-// import React from "react";
-
-// export default function Form() {
-//   return (
-//     <div>
-//       <form>
-//         <input type="text" placeholder="FirstName" />
-//         <input type="text" placeholder="LastName" />
-//         <input type="text" placeholder="Emailaddress"/>
-//       </form>
-//     </div>
-//   );
-// }
 import React, { useState } from "react";
 
 export default function Form({ updateFormData }) {
