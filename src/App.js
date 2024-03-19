@@ -7,20 +7,20 @@ import { useState } from "react";
 function App() {
   const [formData, setFormData] = useState({});
 
-    const updateFormData = (formdata) => {
+  const updateFormData = (formdata) => {
     setFormData(formdata);
   };
 
   const data = [
-    { id: "1", SlideTitle: "Slide 1", SlideContent: <ImageUploader /> },
+    { id: "1", SlideTitle: "Step 1", SlideContent: <ImageUploader /> },
     {
       id: "2",
-      SlideTitle: "Slide 2",
+      SlideTitle: "Step 2",
       SlideContent: <Form updateFormData={updateFormData} />,
     },
     {
       id: "3",
-      SlideTitle: "Slide 3",
+      SlideTitle: "Success",
       SlideContent: <Success formData={formData} />,
     },
   ];
@@ -34,8 +34,9 @@ function App() {
   };
 
   const progress =
-    (data.findIndex((item) => item.id === visibleSlide)+1 / (data.length - 1)) * .3
-
+    (data.findIndex((item) => item.id === visibleSlide) +
+      1 / (data.length - 1)) *
+    0.2;
 
   const listTitles = data.map((item) => (
     <li
@@ -66,10 +67,12 @@ function App() {
   return (
     <div className="App">
       <div className="Slides">
-      <ul className="Slides-titles">{listTitles}</ul>
-      <div className="ProgressBar" style={{ width: `${progress * 100}%` }}>
-      </div>
-      <div className="Slide-content">{listContent}</div>
+        <ul className="Slides-titles">{listTitles}</ul>
+        <div
+          className="ProgressBar"
+          style={{ width: `${progress * 100}%` }}
+        ></div>
+        <div className="Slide-content">{listContent}</div>
       </div>
     </div>
   );
