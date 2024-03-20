@@ -1,0 +1,19 @@
+.Success {
+  width: 500px;
+  height: 200px;
+  padding: 20px;
+  background-color: white;
+}
+.Message {
+  font-weight: bold;
+}
+.Fact {
+  width: 180px;
+  text-overflow: ellipsis;
+  /* background-color: gray; */
+  /* tex */
+}
+mark {
+  background-color: #EFECF0;
+  color: gray;
+}

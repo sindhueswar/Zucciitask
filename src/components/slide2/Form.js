@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./Form.css";
 export default function Form({ updateFormData }) {
   const [formData, setFormData] = useState({});
 
@@ -14,11 +14,31 @@ export default function Form({ updateFormData }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="firstName" placeholder="First Name" onChange={handleInputChange} />
-      <input type="text" name="lastName" placeholder="Last Name" onChange={handleInputChange} />
-      <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
-      <button type="submit">Submit</button>
+    <form onSubmit={handleSubmit} className="Step2">
+      <div className="Names">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          className="FirstName"
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          className="LastName"
+          onChange={handleInputChange}
+        />
+      </div>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="Email"
+        onChange={handleInputChange}
+      />
+      <button type="submit" className="submit">Submit</button>
     </form>
   );
 }

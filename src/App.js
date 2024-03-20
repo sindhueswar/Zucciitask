@@ -59,7 +59,9 @@ function App() {
     >
       {item.SlideContent}
       {index < data.length - 1 && visibleSlide === item.id && (
-        <button onClick={handleNextSlide}>Next</button>
+        <div className="NextContent">
+        <button onClick={handleNextSlide} className="Nextbutton">Next</button>
+        </div>
       )}
     </div>
   ));
