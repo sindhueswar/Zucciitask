@@ -20,19 +20,19 @@ export default function Success({ formData }) {
     <div className="Success">
       <p className="Message">Congratulations, your info is registerd,</p>
       <div className="info">
-      <p>FirstName: {formData.firstName}</p>
-      <p>LastNameName: {formData.lastName}</p>
-      <p>Email: {formData.email}</p>
+        <p>FirstName&nbsp;:&nbsp; {formData.firstName}</p>
+        <p>LastName&nbsp;:&nbsp; {formData.lastName}</p>
+        <p>Email:&nbsp;:&nbsp; {formData.email}</p>
       </div>
       <div className="factcontent">
-      <p>Here's a fact for you:</p>
-      {data ? (
-        <pre className="Fact">
-          <mark>{JSON.stringify(data, null, 2)}</mark>
-        </pre>
-      ) : (
-        <p>Loading...</p>
-      )}
+        <p>Here's a fact for you:</p>
+        {data ? (
+          <pre className="Fact">
+            <mark>{JSON.stringify(data, null, 2)}</mark>
+          </pre>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );
