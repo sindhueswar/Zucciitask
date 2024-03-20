@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./ImageUploader.css";
 import { FaPaperclip } from "react-icons/fa6";
 import { AiFillPicture } from "react-icons/ai";
-const ImageUploader = () => {
+
+const ImageUploader = ({ onNext }) => {
   const [file, setFile] = useState("");
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
   const [errorMessage, setErrorMessage] = useState("No file chosen");
@@ -12,6 +13,7 @@ const ImageUploader = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("handle uploading-", file);
+    // Potentially handle image uploading logic here
   };
 
   const handleImageChange = (e) => {
@@ -34,6 +36,10 @@ const ImageUploader = () => {
       setErrorMessage("Only .png files allowed");
       e.target.value = null;
     }
+  };
+
+  const handleNextClick = () => {
+    onNext();
   };
 
   return (
@@ -80,7 +86,7 @@ const ImageUploader = () => {
             <div
               style={{
                 backgroundColor: "#e3e8ed",
-                justifycontent: "center",
+                justifyContent: "center",
                 marginLeft: "25%",
               }}
             >
@@ -93,12 +99,23 @@ const ImageUploader = () => {
               />
             </div>
           </div>
-          {/* <AiFillPicture
-           className="pictureicon" style={{ border: "none" }} /> */}
         </div>
       )}
+
+      <div className="NextContent">
+        <button
+          onClick={handleNextClick}
+          className="nextButton"
+          disabled={errorMessage === "Only .png files allowed"}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
 
 export default ImageUploader;
+
+
+

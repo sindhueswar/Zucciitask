@@ -10,13 +10,23 @@ function App() {
   const updateFormData = (formdata) => {
     setFormData(formdata);
   };
-
+  const handleNextSlide = () => {
+    const currentIndex = data.findIndex((item) => item.id === visibleSlide);
+    const nextIndex = (currentIndex + 1) % data.length;
+    setVisibleSlide(data[nextIndex].id);
+  };
   const data = [
-    { id: "1", SlideTitle: "Step 1", SlideContent: <ImageUploader /> },
+    {
+      id: "1",
+      SlideTitle: "Step 1",
+      SlideContent: <ImageUploader onNext={handleNextSlide} />,
+    },
     {
       id: "2",
       SlideTitle: "Step 2",
-      SlideContent: <Form updateFormData={updateFormData} />,
+      SlideContent: (
+        <Form updateFormData={updateFormData} onNext={handleNextSlide} />
+      ),
     },
     {
       id: "3",
@@ -27,16 +37,10 @@ function App() {
 
   const [visibleSlide, setVisibleSlide] = useState(data[0].id);
 
-  const handleNextSlide = () => {
-    const currentIndex = data.findIndex((item) => item.id === visibleSlide);
-    const nextIndex = (currentIndex + 1) % data.length;
-    setVisibleSlide(data[nextIndex].id);
-  };
-
   const progress =
     (data.findIndex((item) => item.id === visibleSlide) +
       1 / (data.length - 1)) *
-    0.2;
+    0.15;
 
   const listTitles = data.map((item) => (
     <li
@@ -60,7 +64,9 @@ function App() {
       {item.SlideContent}
       {index < data.length - 1 && visibleSlide === item.id && (
         <div className="NextContent">
-        <button onClick={handleNextSlide} className="Nextbutton">Next</button>
+          {/* <button onClick={handleNextSlide} className="Nextbutton">
+            Next
+          </button> */}
         </div>
       )}
     </div>
