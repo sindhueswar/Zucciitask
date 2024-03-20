@@ -1,19 +1,36 @@
 .Success {
   width: 500px;
   height: 200px;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: white;
 }
 .Message {
   font-weight: bold;
+  margin-top: 30px;
 }
+.factcontent {
+  width: 500px;
+  border: black;
+}
+.info {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #808991;
+}
+
 .Fact {
   width: 180px;
   text-overflow: ellipsis;
-  /* background-color: gray; */
-  /* tex */
+}
+pre {
+  line-height: 1.5em;
+  height: 3em;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 mark {
-  background-color: #EFECF0;
+  background-color: #efecf0;
   color: gray;
 }

@@ -40,7 +40,7 @@ function App() {
   const progress =
     (data.findIndex((item) => item.id === visibleSlide) +
       1 / (data.length - 1)) *
-    0.15;
+    0.16;
 
   const listTitles = data.map((item) => (
     <li
@@ -62,13 +62,6 @@ function App() {
       style={visibleSlide === item.id ? {} : { display: "none" }}
     >
       {item.SlideContent}
-      {index < data.length - 1 && visibleSlide === item.id && (
-        <div className="NextContent">
-          {/* <button onClick={handleNextSlide} className="Nextbutton">
-            Next
-          </button> */}
-        </div>
-      )}
     </div>
   ));
 

@@ -21,17 +21,9 @@
   padding: 10px;
   width: 370px;
 }
-.submit {
+
+.NextformContent {
+  width: 600px;
   display: flex;
-  padding: 0px 8px;
-  align-items: center;
-  justify-content: space-around;
-  border: 2px solid #6558f5;
-  height: 30px;
-  cursor: pointer;
-  color: #6558f5;
-  font-weight: 500;
-  margin-right: 5px;
-  border-radius: 2px;
-  background-color: #fff;
+  justify-content: center;
 }

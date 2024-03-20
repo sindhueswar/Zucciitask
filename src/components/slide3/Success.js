@@ -19,9 +19,12 @@ export default function Success({ formData }) {
   return (
     <div className="Success">
       <p className="Message">Congratulations, your info is registerd,</p>
+      <div className="info">
       <p>FirstName: {formData.firstName}</p>
       <p>LastNameName: {formData.lastName}</p>
       <p>Email: {formData.email}</p>
+      </div>
+      <div className="factcontent">
       <p>Here's a fact for you:</p>
       {data ? (
         <pre className="Fact">
@@ -30,6 +33,7 @@ export default function Success({ formData }) {
       ) : (
         <p>Loading...</p>
       )}
+      </div>
     </div>
   );
 }
